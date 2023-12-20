@@ -9,7 +9,7 @@ describe('acessar entrada e saída', () => {
         cy.get(':nth-child(1) > .element-list > .menu-list > #item-7').click()
         cy.get('#uploadFile').selectFile('sampleFile.jpeg')  
         cy.get('#file-submit').click()
-        cy.get('#downloadButton').contains('sampleFile.jpeg')
+        cy.get('#downloadButton').contains('sampleFile.jpeg') 
        
 
     });
