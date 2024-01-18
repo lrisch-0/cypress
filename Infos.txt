@@ -1,0 +1,87 @@
+npm init --yes - cria projeto o node com a estrutura básica.
+
+Wrote to D:\Cypress\package.json:
+
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+npm install -D cypress@13.5.1 - instalar a versão do cypress
+
+npx cypress open - Rodar o cypress
+
+Instalar extensao es6 mocha snippets
+
+npm run cy:run - rodar no modo headless
+
+-------------------------------------------------------------------------------
+
+Setup
+- npm init --yes
+- npm install -D cypress@13.5.1
+- npx cypress open
+
+Exec
+- arquivos
+    - a.js
+    - b.js
+    - c.js
+    - d.js
+
+CLI
+- modo interativo
+    - npx cypress open
+- modo interativo
+    - npx cypress run
+- modo headless
+    - npx cypress run --config viewportHeight=1000, viewportWidth=600
+
+
+------------------------------------
+
+Versao GIT
+
+https://git-scm.com/downloads
+
+git --version
+
+git init - criar projeto GIT
+
+git remote add origin https://github.com/leandrorisch/cypress-test.git - conectar o repositorio remoto com o local
+
+git branch -M main - Branch vai ser chamada de main
+
+git ignore - criar dentro do projeto, no caso cypress no meu  como.gitignore e dentro dele colocar tudo que nao queremos enviar para o GIT. 
+Exemplo: cypress.env.json
+cypress/screenshots/
+cypress/videos/
+node_modules/
+
+git status - o que o git conseguir rastrear do que vai subir
+
+git add * (exemplo: cypress/) - para adicionar
+
+git commit -m "initial commit for cypress testing" - salvar no GIT tudo que vou rastreado anteriormente
+
+git config --global user.email "you@example.com" - configurar o email 
+git config --global user.name "Your Name" - configurar nome
+
+git push -u origin main - manda as alteraçoes solicitadas de rastreio do local para o remoto
+
+* rm -Force .\.git\index.lock  - caso queira remover um arquivo
+
+git add .\cypress\e2e\toolsqa4-a.cy.js - subir a alteração
+
+git commit -m "space line in the file toolsqa4"  
+
+git push
+
