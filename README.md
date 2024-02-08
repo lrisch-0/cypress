@@ -1,3 +1,5 @@
+
+
 Hello! My name is Leandro Risch and I am an experienced Quality Analyst with a passion for ensuring top-notch software quality since 2007. Over the years, I have honed my skills in various aspects of software testing including functional testing, regression testing, end-to-end testing, and usability testing.
 
 Skills:
