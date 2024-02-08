@@ -4,7 +4,8 @@ Desenvolvedor interessado em automação de testes e qualidade de software. Foca
 =======
 Hello! My name is Leandro Risch and I am an experienced Quality Analyst with a passion for ensuring top-notch software quality since 2007. Over the years, I have honed my skills in various aspects of software testing including functional testing, regression testing, end-to-end testing, and usability testing.
 
-Skills
+Skills:
+
 Functional Testing: Proficient in designing and executing functional test cases to ensure that software applications meet specified requirements.
 
 Regression Testing: Experienced in conducting regression testing to verify that recent code changes have not adversely affected existing functionalities.
@@ -16,8 +17,11 @@ Usability Testing: Well-versed in evaluating the usability of software applicati
 Automation Tools:
 
 Robot Framework: Proficient in utilizing Robot Framework to automate test cases and streamline the testing process.
+
 Cypress: Experienced in using Cypress for end-to-end testing of web applications, ensuring reliability and efficiency.
-Contact
+
+Contact:
+
 Feel free to reach out to me via email at leandro.risch@gmail.com for any inquiries or collaboration opportunities.
 
 Thank you for visiting my GitHub profile! 😊
