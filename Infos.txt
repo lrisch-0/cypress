@@ -1,3 +1,7 @@
+
+CYPRESS
+------------------------
+
 npm init --yes - cria projeto o node com a estrutura básica.
 
 Wrote to D:\Cypress\package.json:
@@ -45,6 +49,131 @@ CLI
 - modo headless
     - npx cypress run --config viewportHeight=1000, viewportWidth=600
 
+Comandos de Navegação:
+
+cy.visit(url): Visita a URL especificada no navegador.
+cy.go(direction): Navega para frente ou para trás no histórico do navegador. As opções válidas são forward e back.
+cy.reload(): Recarrega a página atual.
+Comandos de Seleção de Elementos:
+
+cy.get(selector): Seleciona um elemento DOM usando um seletor CSS.
+cy.contains(text): Seleciona o primeiro elemento que contém o texto especificado.
+cy.find(selector): Encontra todos os elementos DOM que correspondem ao seletor CSS especificado.
+cy.filter(filterFn): Filtra um conjunto de elementos selecionados usando uma função de filtro personalizada.
+Comandos de Interação com Elementos:
+
+cy.click(): Clica no elemento selecionado.
+cy.type(text): Digita o texto especificado no elemento selecionado (geralmente campos de entrada).
+cy.clear(): Limpa o conteúdo do elemento selecionado.
+cy.select(value): Seleciona a opção com o valor especificado em um elemento de seleção.
+Comandos de Asserções:
+
+cy.should(assertion): Verifica se o elemento selecionado atende à asserção especificada. As asserções comuns incluem have.text, have.attr, be.visible, be.checked, etc.
+cy.expect(value): Faz uma asserção sobre o valor retornado por uma expressão.
+Comandos de Testes:
+
+it(description, testFn): Define um teste individual com a descrição e a função de teste.
+describe(description, testFn): Agrupa testes relacionados em uma suíte de testes com a descrição e a função de teste.
+before(hookFn): Executa uma função de gancho antes de cada teste na suíte de testes.
+after(hookFn): Executa uma função de gancho após cada teste na suíte de testes.
+beforeEach(hookFn): Executa uma função de gancho antes de cada teste individual.
+afterEach(hookFn): Executa uma função de gancho após cada teste individual.
+Comandos Adicionais:
+
+cy.wait(milliseconds): Aguarda um determinado número de milissegundos antes de continuar o teste.
+cy.debug(): Entra no modo de depuração, permitindo inspecionar o estado do teste e da aplicação.
+cy.screenshot(filename): Tira uma captura de tela da página atual e salva com o nome de arquivo especificado.
+
+--------------------------
+
+ROBOT
+
+--------------------------
+
+robot -t "Cenário 11" .\sprint1_2.robot
+robot .\sprint1_2.robot
+
+
+1. Configurando o Selenium:
+
+Robot Framework
+Import Libraries  Selenium2Library
+
+Open Browser  https://www.example.com  chrome
+Use o código com cuidado.
+content_copy
+2. Interagindo com Elementos:
+
+Robot Framework
+Find Element  By Id  usernameInput  #usernameInput
+
+Type Text  usernameInput  johndoe
+
+Click Element  loginButton  #loginButton
+
+Get Text  welcomeMessage  #welcomeMessage
+Use o código com cuidado.
+content_copy
+3. Verificando Elementos:
+
+Robot Framework
+Element Should Be Visible  loginButton  #loginButton
+
+Element Should Contain  welcomeMessage  Welcome, johndoe!
+
+Title Should Be  Welcome to Our Website
+Use o código com cuidado.
+content_copy
+4. Capturando Evidências:
+
+Robot Framework
+Take Screenshot  screenshot.png
+
+Save Screenshot  screenshot.png  /path/to/save/screenshot
+Use o código com cuidado.
+content_copy
+5. Gerenciando Fluxo de Teste:
+
+Robot Framework
+IF  Element Present  #ageInput
+    Type Text  ageInput  25
+ELSE
+    Type Text  ageInput  18
+END IF
+
+FOR  i IN RANGE  1  10
+    Click Element  listItem${i}  #listItem${i}
+END FOR
+
+TRY
+    Click Element  dangerousButton  #dangerousButton
+EXCEPT
+    Take Screenshot  error.png
+END TRY
+Use o código com cuidado.
+content_copy
+6. Gerenciando Cenários e Palavras-chave:
+
+Robot Framework
+Keyword  Login
+    Type Text  usernameInput  johndoe
+    Type Text  passwordInput  password123
+    Click Element  loginButton  #loginButton
+END Keyword
+
+Scenario  Successful Login
+    Login
+    Element Should Be Visible  welcomeMessage  #welcomeMessage
+END Scenario
+Use o código com cuidado.
+content_copy
+7. Executando Testes:
+
+Robot Framework
+Run Keyword  Login
+Run Keyword  Check Welcome Message
+
+Run Tests  ./tests/login_tests.robot
 
 ------------------------------------
 
@@ -84,4 +213,49 @@ git add .\cypress\e2e\toolsqa4-a.cy.js - subir a alteração
 git commit -m "space line in the file toolsqa4"  
 
 git push
+
+
+SDLC
+
+------------------------------
+
+Quais são as etapas do SDLC?
+
+As etapas específicas do SDLC podem variar um pouco de acordo com a metodologia utilizada, mas geralmente incluem:
+
+Planejamento: Nesta etapa, os objetivos do projeto, os requisitos do software, o escopo do projeto e os recursos necessários são definidos.
+Análise: Nesta etapa, os requisitos do software são coletados e analisados ​​em detalhes.
+Design: Nesta etapa, a arquitetura do software e o design das interfaces são criados.
+Implementação: Nesta etapa, o software é codificado e testado.
+Testes: Nesta etapa, o software é testado exaustivamente para garantir que atenda aos requisitos e funcione corretamente.
+Implantação: Nesta etapa, o software é implantado no ambiente de produção.
+Manutenção: Nesta etapa, o software é mantido para corrigir bugs, adicionar novos recursos e atender às necessidades dos clientes.
+Existem diferentes modelos de SDLC?
+
+Sim, existem diversos modelos de SDLC, cada um com suas próprias vantagens e desvantagens. Alguns dos modelos mais comuns incluem:
+
+Modelo Cascata: Este é o modelo mais simples e linear, onde cada etapa do SDLC é concluída antes de passar para a próxima.
+Modelo Evolutivo: Este modelo é mais flexível e permite que as mudanças sejam feitas no software durante o desenvolvimento.
+Modelo Ágil: Este modelo é focado na colaboração e no feedback contínuo, com o software sendo desenvolvido em iterações curtas.
+Modelo Espiral: Este modelo combina elementos dos modelos cascata e evolutivo, com o software sendo desenvolvido em ciclos.
+
+What are the Stages of SDLC?
+
+The specific stages of SDLC can vary slightly depending on the methodology used, but they generally include:
+
+Planning: This stage defines project goals, software requirements, project scope, and necessary resources.
+Analysis: Here, software requirements are gathered and analyzed in detail.
+Design: The software architecture and interface design are created in this stage.
+Implementation: The software is coded and tested during this stage.
+Testing: The software undergoes rigorous testing to ensure it meets requirements and functions correctly.
+Deployment: This stage involves deploying the software to the production environment.
+Maintenance: The software is maintained to fix bugs, add new features, and meet evolving customer needs.
+Are There Different SDLC Models?
+
+Yes, there are various SDLC models, each with its own pros and cons. Some of the most common models include:
+
+Waterfall Model: This is the simplest and most linear model, where each SDLC stage is completed before moving on to the next.
+Iterative Model: This model is more flexible and allows for changes to be made to the software throughout development.
+Agile Model: This model focuses on collaboration and continuous feedback, with the software being developed in short iterations.
+Spiral Model: This model combines elements of waterfall and iterative models, with the software being developed in cycles.
 
