@@ -155,6 +155,7 @@
     "safer-buffer": "^2.1.2",
     "semver": "^7.5.4",
     "set-function-length": "^1.1.1",
+    "sharp": "^0.33.5",
     "shebang-command": "^2.0.0",
     "shebang-regex": "^3.0.0",
     "side-channel": "^1.0.4",

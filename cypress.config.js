@@ -1,12 +1,12 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  video:true,
+  video: true,
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      require('./cypress/plugins/index.js')(on, config); // Incluindo o arquivo de plugins para register os tasks
     },
   },
   experimentalModifyObstructiveThirdPartyCode: true,
-  chromeWebSecurity: false
+  chromeWebSecurity: false,
 });
