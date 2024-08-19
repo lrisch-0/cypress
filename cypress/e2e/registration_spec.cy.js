@@ -1,6 +1,6 @@
 describe('Teste de Formulário de Prática', () => {
     beforeEach(() => {
-        cy.viewport(1280, 720);
+        cy.viewport(1280, 720); // Define o tamanho do viewport
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false; // Ignora erros não tratados
         });
@@ -9,23 +9,23 @@ describe('Teste de Formulário de Prática', () => {
     });
 
     const preencherPrimeiroNome = (nome) => {
-        cy.get('#firstName').type(nome);
+        cy.get('#firstName').type(nome); // Preenche o primeiro nome
     };
 
     const preencherSobrenome = (sobrenome) => {
-        cy.get('#lastName').type(sobrenome);
+        cy.get('#lastName').type(sobrenome); // Preenche o sobrenome
     };
 
     const preencherEmail = (email) => {
-        cy.get('#userEmail').type(email);
+        cy.get('#userEmail').type(email); // Preenche o email
     };
 
     const selecionarGenero = (genero) => {
-        cy.get(`label[for="gender-radio-${genero}"]`).click();
+        cy.get(`label[for="gender-radio-${genero}"]`).click(); // Seleciona gênero
     };
 
     const preencherNumeroTelefone = (numero) => {
-        cy.get('#userNumber').type(numero);
+        cy.get('#userNumber').type(numero); // Preenche o número de telefone
     };
 
     const selecionarDataNascimento = (dia) => {
@@ -36,17 +36,17 @@ describe('Teste de Formulário de Prática', () => {
     };
 
     const preencherEndereco = (endereco) => {
-        cy.get('#currentAddress').type(endereco);
+        cy.get('#currentAddress').type(endereco); // Preenche o endereço
     };
 
     const selecionarEstado = (estado) => {
-        cy.get('#state').click();
-        cy.get('#state > div > div').contains(estado).click();
+        cy.get('#state').click(); // Seleciona o estado
+        cy.get('#state > div > div').contains(estado).click(); // Seleciona o estado
     };
 
     const selecionarCidade = (cidade) => {
-        cy.get('#city').click();
-        cy.get('#city > div > div').contains(cidade).click();
+        cy.get('#city').click(); // Seleciona a cidade
+        cy.get('#city > div > div').contains(cidade).click(); // Seleciona a cidade
     };
 
     const enviarFormulario = () => {
@@ -54,7 +54,7 @@ describe('Teste de Formulário de Prática', () => {
     };
 
     const fecharModal = () => {
-        cy.get('#closeLargeModal').click({ force: true });
+        cy.get('#closeLargeModal').click({ force: true }); // Fecha a modal
     };
 
     it('Deve preencher e enviar o formulário com sucesso', () => {
@@ -75,19 +75,16 @@ describe('Teste de Formulário de Prática', () => {
         cy.get('.modal-title', { timeout: 10000 }).should('be.visible').then(() => {
             const screenshotFilePath = 'Formulario_enviado.png'; // Nome da imagem
 
-            // Tira o screenshot e aguarda que o arquivo seja salvo
-            return cy.screenshot(screenshotFilePath).then(() => {
-                // Aguarda um pouco para garantir que o arquivo foi salvo
-                cy.wait(500); // Espera 500 ms
-
-                // Adiciona o timestamp à captura
-                const fullScreenshotPath = `cypress/screenshots/${screenshotFilePath}`; // Caminho completo da imagem
-                return cy.task('addTimestampToScreenshot', fullScreenshotPath); // Chama a task para adicionar o timestamp
+            // Tira o screenshot
+            cy.screenshot(screenshotFilePath).then(() => {
+                const fullScreenshotPath = `cypress/screenshots/${screenshotFilePath}`; // Caminho completo
+                // Adiciona timestamp à captura
+                return cy.task('addTimestampToScreenshot', fullScreenshotPath);
             });
         });
 
         // Verifica se a mensagem de sucesso está visível
-        cy.get('.modal-title').should('contain', 'Thanks for submitting the form');
+        cy.get('.modal-title').should('contain', 'Thanks for submitting the form'); // Verifica a mensagem de sucesso
 
         // Fecha a modal
         fecharModal();
