@@ -1,4 +1,4 @@
-import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
+import { Given, When, Then, And, Also } from '@badeball/cypress-cucumber-preprocessor'; 
 
 Given('que eu estou na página do formulário de prática', () => {
     cy.viewport(1280, 720); // Define o tamanho do viewport
@@ -16,35 +16,35 @@ Then('eu preencho o sobrenome com {string}', (sobrenome) => {
     cy.get('#lastName').type(sobrenome); // Preenche o sobrenome
 });
 
-Then('eu preencho o email com {string}', (email) => {
+And('eu preencho o email com {string}', (email) => {
     cy.get('#userEmail').type(email); // Preenche o email
 });
 
-Then('eu seleciono o gênero masculino', () => {
+And('eu seleciono o gênero masculino', () => {
     cy.get(`label[for="gender-radio-1"]`).click(); // Seleciona gênero masculino
 });
 
-Then('eu preencho o número de telefone com {string}', (numero) => {
+And('eu preencho o número de telefone com {string}', (numero) => {
     cy.get('#userNumber').type(numero); // Preenche o número de telefone
 });
 
-Then('eu seleciono a data de nascimento {string}', (dia) => {
+Also('eu seleciono a data de nascimento {string}', (dia) => {
     cy.get('#dateOfBirthInput').click(); // Clica no campo de data de nascimento
     cy.get('.react-datepicker__month-container')
         .find('.react-datepicker__day')
         .contains(dia).click(); // Seleciona o dia desejado
 });
 
-Then('eu preencho o endereço com {string}', (endereco) => {
+And('eu preencho o endereço com {string}', (endereco) => {
     cy.get('#currentAddress').type(endereco); // Preenche o endereço
 });
 
-Then('eu seleciono o estado {string}', (estado) => {
+And('eu seleciono o estado {string}', (estado) => {
     cy.get('#state').click(); // Seleciona o estado
     cy.get('#state > div > div').contains(estado).click(); // Seleciona o estado
 });
 
-Then('eu seleciono a cidade {string}', (cidade) => {
+And('eu seleciono a cidade {string}', (cidade) => {
     cy.get('#city').click(); // Seleciona a cidade
     cy.get('#city > div > div').contains(cidade).click(); // Seleciona a cidade
 });
@@ -57,7 +57,7 @@ Then('eu vejo uma mensagem de sucesso {string}', (mensagem) => {
     cy.get('.modal-title').should('contain', mensagem); // Verifica a mensagem de sucesso
 });
 
-Then('eu tiro uma captura de tela do formulário enviado', () => {
+Also('eu tiro uma captura de tela do formulário enviado', () => {
     const screenshotFilePath = 'Formulario_enviado.png'; // Nome da imagem
     cy.screenshot(screenshotFilePath).then(() => {
         const fullScreenshotPath = `cypress/screenshots/${screenshotFilePath}`; // Caminho completo
